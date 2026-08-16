@@ -4,6 +4,9 @@ data/processed/*.pkl
 data/processed/*.npz
 __pycache__/
 *.pyc
+
+# Third-party screenshot used in the poster only; not for redistribution
+figures/ga_problem.png
 .ipynb_checkpoints/
 .DS_Store
 
