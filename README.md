@@ -42,7 +42,6 @@ The epistemic-aleatoric decomposition is the central finding. Blowout game state
 Play-by-play data was pulled from the NBA's official API via `nba_api` (PlayByPlayV3 endpoint) for all regular season games from 2018-19 through 2023-24. Game state was sampled every 2 minutes throughout regulation.
 
 | | |
-|---|---|
 | Games | 6,962 |
 | Game-state observations | 174,050 |
 | Training | 2018-19 through 2022-23 (5 seasons, 5,732 games) |
@@ -50,7 +49,6 @@ Play-by-play data was pulled from the NBA's official API via `nba_api` (PlayByPl
 | GP training bins | 634 (mean 226 observations per bin) |
 | Exclusions | Bubble games, overtime, playoffs |
 
-The raw data files are not tracked in this repo since they run to several hundred megabytes. Run the data collection notebook to pull everything fresh from the API.
 
 ---
 
@@ -86,8 +84,6 @@ python demo/live_prediction.py
   Context: CLUTCH
 ==========================================================
 ```
-
-Two numbers go in, the full posterior comes out. Under a millisecond.
 
 ---
 
@@ -138,7 +134,7 @@ Run `notebooks/01_data_collection.ipynb` first. The full six-season play-by-play
 
 ## Limitations
 
-The model sees the scoreboard, not the story. A 2-point lead after leading all game and a 2-point lead after a 19-point comeback produce the same prediction and the same uncertainty band, because the GP operates on a Markov assumption with no trajectory features. Incorporating margin velocity and recent scoring runs is the natural next step.
+The model sees the scoreboard without the context of the actual basketball game. A 2-point lead after leading all game and a 2-point lead after a 19-point comeback produce the same prediction and the same uncertainty band, because the GP operates on a Markov assumption with no trajectory features. Incorporating margin velocity and recent scoring runs is the next step.
 
 The binning approach is an approximation of full GP classification. It discards within-bin variation and treats each bin's empirical win rate as a noisy observation of a latent function.
 
