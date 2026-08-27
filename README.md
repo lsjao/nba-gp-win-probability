@@ -41,13 +41,15 @@ The epistemic-aleatoric decomposition is the central finding. Blowout game state
 
 Play-by-play data was pulled from the NBA's official API via `nba_api` (PlayByPlayV3 endpoint) for all regular season games from 2018-19 through 2023-24. Game state was sampled every 2 minutes throughout regulation.
 
-| | |
-| Games | 6,962 |
-| Game-state observations | 174,050 |
-| Training | 2018-19 through 2022-23 (5 seasons, 5,732 games) |
-| Test | 2023-24 (1,230 games, held out entirely) |
-| GP training bins | 634 (mean 226 observations per bin) |
-| Exclusions | Bubble games, overtime, playoffs |
+| Category              | Value/Details                                                                 |
+|-----------------------|-------------------------------------------------------------------------------|
+| Games                 | 6,962                                                                         |
+| Game‑state observations | 174,050                                                                      |
+| Training set          | 2018–19 through 2022–23 (5 seasons, 5,732 games)                              |
+| Test set              | 2023–24 (1,230 games, held out entirely)                                      |
+| GP training bins      | 634 (mean 226 observations per bin)                                           |
+| Exclusions            | Bubble games, overtime, playoffs                                              |
+
 
 
 ---
